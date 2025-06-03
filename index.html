@@ -8,13 +8,16 @@
       padding: 0;
     }
 
-    /* Position the image at the top-left corner */
+    /* Position the image at the top-left corner and size it like an icon */
     img {
       position: fixed; /* fixes the image in place */
       top: 0;
       left: 0;
+      width: 32px;   /* icon width */
+      height: 32px;  /* icon height */
       display: block; /* removes any inline gap */
       border: none; /* remove any border */
+      object-fit: contain; /* maintain aspect ratio */
     }
   </style>
 </head>
