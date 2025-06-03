@@ -1,0 +1,13 @@
+body {
+  background: white;
+}
+p {
+  color: lightcoral;
+}
+h1 {
+  font-weight: bold;
+}
+
+.myImage {
+  background-image: url("IMG_20250508_123725.jpg");
+}
