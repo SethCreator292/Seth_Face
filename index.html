@@ -1,23 +1,30 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta charset="UTF-8">
   <style>
-    /* Remove default margin and padding from both html and body */
-    html, body {
+    /* Reset all default spacing and box model */
+    * {
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
     }
 
-    /* Position the image at the top-left corner and size it like an icon */
+    html, body {
+      width: 100%;
+      height: 100%;
+      overflow: hidden; /* Prevent scrollbars just in case */
+    }
+
     img {
       position: fixed;
       top: 0;
       left: 0;
       width: 200px;
       height: 200px;
-      display: block;
-      border: none;
       object-fit: contain;
+      border: none;
+      display: block;
     }
   </style>
 </head>
