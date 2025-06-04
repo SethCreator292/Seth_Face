@@ -16,21 +16,36 @@
       width: 32%;
       height: 32%;
       overflow: hidden;
+      font-family: sans-serif;
     }
 
-    img {
+    .container {
       position: fixed;
       top: 0;
       left: 0;
       width: 32vw;
+      height: auto;
+    }
+
+    img {
+      width: 32vw;
       height: 32vh;
       object-fit: cover;
-      border: none;
       display: block;
+    }
+
+    .caption {
+      color: red;
+      font-size: 1.2em;
+      padding-top: 5px;
+      text-align: center;
     }
   </style>
 </head>
 <body>
-  <img src="IMG_20250508_123725.jpg" alt="Image description" />
+  <div class="container">
+    <img src="IMG_20250508_123725.jpg" alt="Image description" />
+    <div class="caption">im watching you :|</div>
+  </div>
 </body>
 </html>
