@@ -25,9 +25,20 @@
       width: 100vw;
       height: 100vh;
       border: none;
+      z-index: 0; /* Lower z-index for background */
     }
 
-    /* Optional: Style fullscreen button */
+    #foregroundImage {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
+      z-index: 2; /* Higher z-index to appear above iframe */
+      pointer-events: none; /* So clicks pass through to iframe if needed */
+    }
+
     #fullscreenBtn {
       position: fixed;
       top: 10px;
@@ -38,7 +49,7 @@
       border: none;
       font-size: 1em;
       cursor: pointer;
-      z-index: 9999;
+      z-index: 3; /* On top of all */
     }
   </style>
 </head>
@@ -47,12 +58,15 @@
   <!-- Fullscreen Button -->
   <button id="fullscreenBtn">Fullscreen</button>
 
-  <!-- Embedded Website -->
+  <!-- Background Website -->
   <iframe 
     src="https://example.com" 
     sandbox="allow-same-origin allow-forms allow-pointer-lock allow-popups allow-top-navigation-by-user-activation" 
     allowfullscreen
   ></iframe>
+
+  <!-- Foreground Image -->
+  <img id="foregroundImage" src="seths-face.jpg" alt="Seth's Face">
 
   <script>
     // Fullscreen toggle for iframe
