@@ -25,18 +25,18 @@
       width: 100vw;
       height: 100vh;
       border: none;
-      z-index: 0; /* Lower z-index for background */
+      z-index: 0;
     }
 
     #foregroundImage {
       position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      object-fit: cover;
-      z-index: 2; /* Higher z-index to appear above iframe */
-      pointer-events: none; /* So clicks pass through to iframe if needed */
+      top: 10px;
+      left: 10px;
+      width: 50px;
+      height: 50px;
+      object-fit: contain;
+      z-index: 2;
+      pointer-events: none;
     }
 
     #fullscreenBtn {
@@ -49,7 +49,7 @@
       border: none;
       font-size: 1em;
       cursor: pointer;
-      z-index: 3; /* On top of all */
+      z-index: 3;
     }
   </style>
 </head>
@@ -60,24 +60,24 @@
 
   <!-- Background Website -->
   <iframe 
-    src="https://example.com" 
+    src="https://fierceprogress.bsfa.info/" 
     sandbox="allow-same-origin allow-forms allow-pointer-lock allow-popups allow-top-navigation-by-user-activation" 
     allowfullscreen
   ></iframe>
 
-  <!-- Foreground Image -->
-  <img id="foregroundImage" src="yes.jpg" alt="yes">
+  <!-- Foreground Small Icon Image -->
+  <img id="foregroundImage" src="yes.jpg" alt="Icon">
 
   <script>
-    // Fullscreen toggle for iframe
+    // Fullscreen toggle for the entire document instead of just iframe
     document.getElementById('fullscreenBtn').addEventListener('click', () => {
-      const iframe = document.querySelector('iframe');
-      if (iframe.requestFullscreen) {
-        iframe.requestFullscreen();
-      } else if (iframe.webkitRequestFullscreen) {
-        iframe.webkitRequestFullscreen();
-      } else if (iframe.msRequestFullscreen) {
-        iframe.msRequestFullscreen();
+      const docElm = document.documentElement;
+      if (docElm.requestFullscreen) {
+        docElm.requestFullscreen();
+      } else if (docElm.webkitRequestFullscreen) {
+        docElm.webkitRequestFullscreen();
+      } else if (docElm.msRequestFullscreen) {
+        docElm.msRequestFullscreen();
       }
     });
   </script>
